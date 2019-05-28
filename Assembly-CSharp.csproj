@@ -62,8 +62,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
+    <Compile Include="Assets\Scripts\GuardAnimator.cs" />
     <Compile Include="Assets\Scripts\GuardPatrol.cs" />
+    <Compile Include="Assets\Scripts\IInteractable.cs" />
+    <Compile Include="Assets\Scripts\IPickupable.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\KeyObject.cs" />
+    <Compile Include="Assets\Scripts\PlayerInteract.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Joar/Documents/UnityProjects/OptimusPrime24H/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

@@ -6,10 +6,13 @@ public class FieldOfView : MonoBehaviour
 {
     public delegate void CanSeeTarget(Transform target);
     public CanSeeTarget canSeeTarget;
+    public CanSeeTarget targetInPeripheral;
 
     public float viewRadius = 5f;
     [Range(0, 360)]
-    public float viewAngle = 40f;
+    public float viewAngle = 70f;
+    [Range(0, 360)]
+    public float peripheralVision = 85;
     [Space]
     public float meshResolution = 3f;
     public int edgeResolveIterations = 4;
@@ -52,12 +55,15 @@ public class FieldOfView : MonoBehaviour
         {
             Transform target = targetsInViewRadius[0].transform; // there can only be one player
             Vector3 directionToTarget = target.position - transform.position;
-            if (Vector3.Angle(transform.forward, directionToTarget) < viewAngle / 2)
+            if (Vector3.Angle(transform.forward, directionToTarget) < peripheralVision / 2)
             {
                 float distanceToTarget = directionToTarget.magnitude;
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstacleMask))
                 {
-                    canSeeTarget?.Invoke(target);
+                    if (Vector3.Angle(transform.forward, directionToTarget) < viewAngle / 2)
+                        canSeeTarget?.Invoke(target);
+                    else
+                        targetInPeripheral?.Invoke(target);
                 }
             }
         }

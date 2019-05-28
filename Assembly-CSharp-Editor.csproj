@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\FieldOfViewEditor.cs" />
+    <Compile Include="Assets\Editor\GuardPatrolEditor.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Joar/Documents/UnityProjects/OptimusPrime24H/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

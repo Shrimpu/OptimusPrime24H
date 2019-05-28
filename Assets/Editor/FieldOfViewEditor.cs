@@ -16,5 +16,13 @@ public class FieldOfViewEditor : Editor
 
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleA * fow.viewRadius);
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleB * fow.viewRadius);
+
+
+        Handles.color = new Color(255, 69, 0);
+        Vector3 viewAngleC = fow.DirectionFromAngle(-fow.peripheralVision / 2, false);
+        Vector3 viewAngleD = fow.DirectionFromAngle(fow.peripheralVision / 2, false);
+
+        Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleC * fow.viewRadius);
+        Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleD * fow.viewRadius);
     }
 }
